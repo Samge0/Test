@@ -8,6 +8,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
@@ -25,6 +27,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.getui.test.List.DataBindListActivity;
+import com.getui.test.ac.RxTextActivity;
+import com.getui.test.databinding.MainBind;
 import com.igexin.sdk.PushConsts;
 import com.igexin.sdk.PushManager;
 import com.igexin.sdk.Tag;
@@ -84,11 +88,15 @@ public class GetuiSdkDemoActivity extends Activity implements OnClickListener {
 
     // DemoPushService.class 自定义服务名称, 核心服务
     private Class userPushService = DemoPushService.class;
+    private MainBind mBinding;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+
+        mBinding=DataBindingUtil.setContentView(this, R.layout.main);
+        mBinding.setClick(this);
 
         context = this;
         isServiceRunning = true;
@@ -486,6 +494,19 @@ public class GetuiSdkDemoActivity extends Activity implements OnClickListener {
             GetuiSdkHttpPost.httpPost(param);
         } else {
             Toast.makeText(this, "对不起，当前网络不可用!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    /*测试数据*/
+    public void myClick(View view){
+        switch (view.getId()) {
+            case R.id.rx:
+                startActivity(new Intent(this,RxTextActivity.class));
+                break;
+
+            default:
+                break;
         }
     }
 }

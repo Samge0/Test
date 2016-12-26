@@ -6,6 +6,7 @@
 
         <import type="java.util.ArrayList"/>
         <import type="com.getui.test.bean.DataBindBean"/>
+        <import type="android.text.TextUtils"/>
 
         <variable
             name="dataBean"
@@ -43,7 +44,7 @@
             android:elevation="5dp"
             android:onClick="@{click.bindClick}"
             android:padding="10dp"
-            android:text="@{`姓名：`+ list[index].name ?? `姓名默认字符`}"
+            android:text="@{`姓名：`+ (TextUtils.isEmpty(list[index].name) ? `姓名默认字符`:list[index].name)}"
             android:textColor="#000"/>
 
         <TextView
@@ -56,7 +57,7 @@
             android:elevation="5dp"
             android:onClick="@{click.bindClick}"
             android:padding="10dp"
-            android:text="@{`性别：`+(list[index].sex ?? `默认性别`)}"
+            android:text="@{`性别：`+(TextUtils.isEmpty(list[index].sex) ? `默认性别`:list[index].sex)}"
             android:textColor="#000"/>
 
         <ImageView

@@ -34,14 +34,13 @@ public class DataBindActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding=DataBindingUtil.setContentView(this, R.layout.activity_databind);
-
         mList=new ArrayList<>();
         mList.add(new DataBindBean("samge1--", "男", "http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg", true));
         mList.add(new DataBindBean("samge2--", "女", "http://n.7k7kimg.cn/2013/1101/1383291711366.gif", false));
         mList.add(new DataBindBean("samge3--", "未知", "http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg", true));
         mList.add(new DataBindBean("", "男女", "http://n.7k7kimg.cn/2013/1101/1383291711366.gif", false));
         mList.add(new DataBindBean("samge5--", "", "http://4493bz.1985t.com/uploads/allimg/150127/4-15012G52133.jpg", true));
-        mList.add(new DataBindBean("samge6--", "xxxxx", "", false));
+        mList.add(new DataBindBean("samge6--", "xxxxx", null, false));
         mBinding.setList((ArrayList<DataBindBean>) mList);
         mBinding.setDataBean(mList.get(i++ % (mList.size())));
         mBinding.setClick(this);
