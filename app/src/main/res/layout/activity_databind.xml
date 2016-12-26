@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--databind-->
+    <data class="DataBind">
+
+        <import type="java.util.ArrayList"/>
+        <import type="com.getui.test.bean.DataBindBean"/>
+
+        <variable
+            name="dataBean"
+            type="DataBindBean"/>
+
+        <variable
+            name="click"
+            type="com.getui.test.DataBindActivity"/>
+
+        <variable
+            name="list"
+            type="ArrayList&lt;DataBindBean>"/>
+
+        <variable
+            name="index"
+            type="int"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/group"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background='@{dataBean.isSex ? @color/input_yellow : @color/fill_moren}'
+        android:onClick="@{click.bindClick}"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#fff"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:onClick="@{click.bindClick}"
+            android:padding="10dp"
+            android:text="@{`姓名：`+ list[index].name ?? `姓名默认字符`}"
+            android:textColor="#000"/>
+
+        <TextView
+            android:id="@+id/id_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="1dp"
+            android:background="#fff"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:onClick="@{click.bindClick}"
+            android:padding="10dp"
+            android:text="@{`性别：`+(list[index].sex ?? `默认性别`)}"
+            android:textColor="#000"/>
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:clickable="true"
+            android:elevation="5dp"
+            android:onClick="@{click.bindClick}"
+            app:imgUrl="@{(list[index].imgUrl ?? `http://c.hiphotos.baidu.com/zhidao/wh%3D450%2C600/sign=18870500b0de9c82a630f18b59b1ac3c/e850352ac65c1038d99c2ffbb1119313b07e892d.jpg`)}"
+            />
+
+    </LinearLayout>
+</layout>
