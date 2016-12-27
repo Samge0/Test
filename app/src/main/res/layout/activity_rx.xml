@@ -1,24 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data class="RxTextBind">
+
         <variable
             name="click"
             type="com.getui.test.ac.RxTextActivity"/>
     </data>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/say_hello"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="saySomeThing"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/just"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="just方法"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="from方法"
+                android:textColor="#000"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/simply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="lambda表达"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="operator操作符map"
+                android:textColor="#000"/>
+
+            <TextView
+                android:id="@+id/just_moren"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="#fff"
+                android:onClick="@{click.bindClick}"
+                android:padding="10dp"
+                android:text="just_moren"
+                android:textColor="#000"/>
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+
         <TextView
-            android:id="@+id/say_hello"
+            android:id="@+id/just_list"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="sayHello"
-            android:onClick="click.bindClick"
-            android:textColor="#000"
-            android:background="#fff"/>
+            android:layout_margin="5dp"
+            android:background="#fff"
+            android:onClick="@{click.bindClick}"
+            android:padding="10dp"
+            android:text="just_list_flatap"
+            android:textColor="#000"/>
 
+
+        <TextView
+            android:clickable="true"
+            android:id="@+id/rx_bind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#fff"
+            android:padding="10dp"
+            android:text="rx_bind"
+            android:textColor="#000"/>
+
+        </LinearLayout>
     </LinearLayout>
 </layout>
